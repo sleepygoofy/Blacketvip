@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blacket</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <div class="container">
     <img id="image" src="https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20194607.png?v=1742774029372" alt="Flip Image" />
@@ -55,24 +62,30 @@
       'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200655.png?v=1742775033299',
       'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200702.png?v=1742775034654',
       'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200711.png?v=1742775036025',
-      'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200719.png?v=1742775037380',
-      'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200730.png?v=1742775038739'
+      'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200720.png?v=1742775037599',
     ];
-    let currentIndex = 0;
+
+    let currentImageIndex = 0;
 
     function showImage(index) {
-      document.getElementById('image').src = images[index];
+      const image = document.getElementById('image');
+      image.src = images[index];
     }
 
     function nextImage() {
-      currentIndex = (currentIndex + 1) % images.length;
-      showImage(currentIndex);
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      showImage(currentImageIndex);
     }
 
     function prevImage() {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      showImage(currentIndex);
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      showImage(currentImageIndex);
     }
+
+    window.onload = () => {
+      showImage(currentImageIndex);
+    };
   </script>
 </body>
+
 </html>
