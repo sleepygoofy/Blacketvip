@@ -1,0 +1,54 @@
+body {
+  background-color: #2c2c2c;
+  color: #fff;
+  font-family: 'Luckiest Guy', sans-serif;
+  font-size: 14px; /* Smaller font size */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 6px 12px; /* Smaller padding */
+  font-size: 14px; /* Smaller font size */
+  cursor: pointer;
+  margin: 8px; /* Smaller margin */
+}
+
+button:hover {
+  background-color: #666;
+}
+
+img {
+  width: 60%; /* Smaller image size */
+  border-radius: 15px;
+  margin-bottom: 15px; /* Smaller margin */
+}
+
+.footer {
+  text-align: center;
+  margin-top: 15px; /* Smaller top margin */
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px; /* Smaller font size for links */
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer span {
+  color: white;
+  margin: 0 8px; /* Smaller space between links */
+}
