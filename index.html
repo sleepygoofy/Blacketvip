@@ -11,14 +11,13 @@
   <div class="container">
     <img id="image" src="https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20194607.png?v=1742774029372" alt="Flip Image" />
     <div class="buttons">
-      <button id="prev" onclick="prevImage()" disabled> Prev</button>
+      <button id="prev" onclick="prevImage()" disabled>Prev</button>
       <button id="next" onclick="nextImage()">Next Pack</button>
     </div>
   </div>
 
   <div class="footer">
-    <a href="/credits" class="footer-link">Credits</a> | 
-    <a href="/terms" class="footer-link">Terms</a>
+    <a href="credits.html">Credits</a> | <a href="terms.html">Terms</a>
   </div>
 
   <script>
@@ -56,40 +55,36 @@
       'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200655.png?v=1742775033299',
       'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200702.png?v=1742775034654',
       'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200711.png?v=1742775036025',
-      'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200719.png?v=1742775037380',
-      'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200730.png?v=1742775038739'
+      'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200718.png?v=1742775037399',
+      'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200725.png?v=1742775038762'
     ];
-    let currentIndex = 0;
+    let currentImage = 0;
 
-    function showImage(index) {
-      document.getElementById('image').src = images[index];
+    const imageElement = document.getElementById("image");
+    const prevButton = document.getElementById("prev");
+    const nextButton = document.getElementById("next");
+
+    function showImage() {
+      imageElement.src = images[currentImage];
+      prevButton.disabled = currentImage === 0;
+      nextButton.disabled = currentImage === images.length - 1;
     }
 
     function nextImage() {
-      currentIndex = (currentIndex + 1) % images.length;
-      showImage(currentIndex);
-      animateTransition();
+      if (currentImage < images.length - 1) {
+        currentImage++;
+        showImage();
+      }
     }
 
     function prevImage() {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      showImage(currentIndex);
-      animateTransition();
+      if (currentImage > 0) {
+        currentImage--;
+        showImage();
+      }
     }
 
-    function animateTransition() {
-      const image = document.getElementById('image');
-      image.classList.add('fade');
-      setTimeout(() => {
-        image.classList.remove('fade');
-      }, 500);
-      document.getElementById('prev').disabled = currentIndex === 0;
-    }
-
-    window.onload = () => {
-      showImage(currentIndex);
-      animateTransition();
-    };
+    showImage();
   </script>
 </body>
 </html>
