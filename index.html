@@ -10,14 +10,8 @@
 <body>
   <div class="container">
     <img id="image" src="https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20194607.png?v=1742774029372" alt="Flip Image" />
-    <button id="prevBtn" onclick="prevImage()">⏪ Prev</button>
+    <button onclick="prevImage()">⏪ Prev</button>
     <button onclick="nextImage()">Next ⏩</button>
-  </div>
-
-  <div class="footer">
-    <a href="credits.html">Credits</a>
-    <span>|</span>
-    <a href="policy.html">Privacy Policy</a>
   </div>
 
   <script>
@@ -54,18 +48,24 @@
       'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200647.png?v=1742775030641',
       'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200655.png?v=1742775033299',
       'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200702.png?v=1742775034654',
-      'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200711.png?v=1742775036025'
+      'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200711.png?v=1742775036025',
+      'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200719.png?v=1742775037380',
+      'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200728.png?v=1742775038614'
     ];
     let currentIndex = 0;
 
+    function updateImage() {
+      document.getElementById('image').src = images[currentIndex];
+    }
+
     function nextImage() {
       currentIndex = (currentIndex + 1) % images.length;
-      document.getElementById('image').src = images[currentIndex];
+      updateImage();
     }
 
     function prevImage() {
       currentIndex = (currentIndex - 1 + images.length) % images.length;
-      document.getElementById('image').src = images[currentIndex];
+      updateImage();
     }
   </script>
 </body>
