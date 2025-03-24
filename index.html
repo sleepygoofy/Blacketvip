@@ -4,14 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Image Flip</title>
-  <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
     <img id="image" src="https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20194607.png?v=1742774029372" alt="Flip Image" />
-    <button onclick="prevImage()">⏪ Prev</button>
-    <button onclick="nextImage()">Next ⏩</button>
+    <div class="buttons">
+      <button id="prev" onclick="prevImage()">⏪ Prev</button>
+      <button id="next" onclick="nextImage()">Next ⏩</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="/credits">Credits</a> | <a href="/terms">Terms</a>
   </div>
 
   <script>
@@ -50,22 +56,22 @@
       'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200702.png?v=1742775034654',
       'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200711.png?v=1742775036025',
       'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200719.png?v=1742775037380',
-      'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200728.png?v=1742775038614'
+      'https://cdn.glitch.global/fabe4aa7-fc2d-48cb-aaaf-e66e6cc5aa9c/Screenshot%202025-03-23%20200730.png?v=1742775038739'
     ];
     let currentIndex = 0;
 
-    function updateImage() {
-      document.getElementById('image').src = images[currentIndex];
+    function showImage(index) {
+      document.getElementById('image').src = images[index];
     }
 
     function nextImage() {
       currentIndex = (currentIndex + 1) % images.length;
-      updateImage();
+      showImage(currentIndex);
     }
 
     function prevImage() {
       currentIndex = (currentIndex - 1 + images.length) % images.length;
-      updateImage();
+      showImage(currentIndex);
     }
   </script>
 </body>
