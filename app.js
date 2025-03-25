@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const { createClient } = require('@supabase/supabase-js');
-const path = require('path');
 
 const app = express();
 app.use(express.json());
@@ -12,7 +11,7 @@ const supabaseUrl = 'https://wmtrobeaujrftirclypz.supabase.co'; // Your Supabase
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndtdHJvYmVhdWpyZnRpcmNseXB6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI5MzI3ODQsImV4cCI6MjA1ODUwODc4NH0.P78epfp01dW8HK9kHirBeeLO4y9FC3skFvprYnFZjWE'; // Replace with your actual Supabase API key
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-// Serve the form page
+// Serve the form page directly at root ('/')
 app.get('/', (req, res) => {
   res.send(`
     <html lang="en">
@@ -97,7 +96,7 @@ app.get('/', (req, res) => {
   `);
 });
 
-// API route to handle form submission
+// API route to handle form submission at '/submit'
 app.post('/submit', async (req, res) => {
   const { suggestion, changeRequest } = req.body;
 
