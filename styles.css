@@ -7,27 +7,6 @@ body {
   padding: 0;
 }
 
-/* Rainbow Effect */
-@keyframes rainbow {
-  0% { color: red; }
-  16.66% { color: orange; }
-  33.33% { color: yellow; }
-  50% { color: green; }
-  66.66% { color: blue; }
-  83.33% { color: indigo; }
-  100% { color: violet; }
-}
-
-.rainbow {
-  animation: rainbow 2s infinite linear;
-}
-
-/* Apply to Every Word */
-body * {
-  display: inline-block;
-  animation: rainbow 2s infinite linear;
-}
-
 .container {
   text-align: center;
   padding: 20px;
