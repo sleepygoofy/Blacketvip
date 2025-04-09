@@ -1,7 +1,7 @@
 body {
   font-family: 'Luckiest Guy', cursive;
   text-align: center;
-  background: url('/background.gif') repeat;
+  background: url('background.gif') repeat;
   background-size: cover;
   background-attachment: fixed;
   color: #fff;
@@ -14,11 +14,12 @@ body {
 }
 
 img#image {
-  width: 300px;
+  width: 80vw;
+  max-width: 900px;
   height: auto;
   border-radius: 16px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  margin-bottom: 30px;
 }
 
 .buttons {
@@ -29,10 +30,10 @@ button {
   font-family: inherit;
   background-color: #ff4081;
   border: none;
-  padding: 12px 20px;
-  margin: 0 10px;
+  padding: 14px 26px;
+  margin: 0 12px;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
   border-radius: 12px;
   cursor: pointer;
   transition: background 0.3s;
