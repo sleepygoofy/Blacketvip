@@ -1,62 +1,55 @@
-/* General Styling */
 body {
   font-family: 'Luckiest Guy', cursive;
-  background-color: #1b1b1b;
+  text-align: center;
+  background: url('/background.gif') repeat;
+  background-size: cover;
+  background-attachment: fixed;
   color: #fff;
   margin: 0;
   padding: 0;
 }
 
 .container {
-  text-align: center;
-  padding: 20px;
+  padding: 60px 20px;
 }
 
-#image {
-  width: 100%;
-  max-width: 600px;
-  margin: 20px 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+img#image {
+  width: 300px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
 }
 
 .buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-button {
-  background-color: #f4b400;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:disabled {
-  background-color: #7f7f7f;
-  cursor: not-allowed;
-}
-
-button:hover {
-  background-color: #e3a800;
-}
-
-.footer {
-  text-align: center;
   margin-top: 20px;
 }
 
-.footer a {
-  color: #f4b400;
-  text-decoration: none;
-  font-size: 14px;
+button {
+  font-family: inherit;
+  background-color: #ff4081;
+  border: none;
+  padding: 12px 20px;
+  margin: 0 10px;
+  color: white;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.footer a:hover {
-  text-decoration: underline;
+button:disabled {
+  background-color: #777;
+  cursor: not-allowed;
+}
+
+.footer {
+  margin-top: 60px;
+  font-size: 18px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
 }
